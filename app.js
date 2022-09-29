@@ -2,20 +2,21 @@
 const express = require('express')
 const app = express()
 
-// ----------  ruta Me  ----------//
+// ----------  Ruta Me  ----------//
 
 app.get('/me', (req, res) => {
   console.log(req.method)
   res.status(200).json({
     name: 'Julio Cesar',
     edad: 27,
-    pais: 'México'
+    pais: 'México',
+    messege: req.method
   })
 })
 
 // ---------- Ruta Goels  -----------//
 
-app.post('/goels', (req, res) => {
+app.post('/metas', (req, res) => {
 
   console.log(req.method)
   res.status(200).json({
@@ -24,16 +25,18 @@ app.post('/goels', (req, res) => {
       'I enjoy playing the guitar',
       'I love listenning to music',
     ],
+    messege: req.method
   })
 })
 
-app.patch('/goels', (req, res) => {
+app.patch('/metas', (req, res) => {
   console.log(req.method)
   res.status(200).json({
     learn: [
       'Back-end',
-      'Angular'
-    ]
+      'Svelte'
+    ],
+    messege: req.method
   })
 })
 
@@ -43,10 +46,11 @@ app.put('/business', (req, res) => {
   console.log(req.method)
   res.status(200).json({
     companys: [
-      'Globan',
-      'Microsoft',
+      'Globant',
+      'Company_2',
       'AI'
-    ]
+    ],
+    messege: req.method
   })
 })
 
